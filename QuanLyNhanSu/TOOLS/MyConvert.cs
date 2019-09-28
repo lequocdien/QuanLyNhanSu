@@ -45,9 +45,11 @@ namespace TOOLS
             nvDTO.DienThoai = nv.DienThoai;
             nvDTO.HinhAnh = nv.HinhAnh;
             nvDTO.DiaChi = nv.DiaChi;
+            nvDTO.MaTrinhDo = nv.MaTrinhDo;
             nvDTO.MaBP = nv.MaBP;
             nvDTO.MaChucVu = nv.MaChucVu;
             nvDTO.DaThoiViec = nv.DaThoiViec;
+            nvDTO.TenTrinhDo = nv.TRINHDO.TenTrinhDo;
             nvDTO.TenBP = nv.BOPHAN.TenBP;
             nvDTO.TenChucVu = nv.CHUCVU.TenChucVu;
             return nvDTO;
@@ -65,6 +67,7 @@ namespace TOOLS
             nv.DienThoai = nvDTO.DienThoai;
             nv.HinhAnh = nvDTO.HinhAnh;
             nv.DiaChi = nvDTO.DiaChi;
+            nv.MaTrinhDo = nvDTO.MaTrinhDo;
             nv.MaBP = nvDTO.MaBP;
             nv.MaChucVu = nvDTO.MaChucVu;
             nv.DaThoiViec = nvDTO.DaThoiViec;

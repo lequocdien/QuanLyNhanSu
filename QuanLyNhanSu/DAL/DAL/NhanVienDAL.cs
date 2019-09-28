@@ -16,6 +16,7 @@ namespace DAL.DAL
                 QuanLyNhanSuEntities db = DataProvider.dbContext;
                 var query = from nv in db.NHANVIENs
                             where nv.DaThoiViec == false
+                            orderby nv.Ten ascending
                             select new NhanVienDTO
                             {
                                 MaNV = nv.MaNV,
@@ -27,6 +28,8 @@ namespace DAL.DAL
                                 DienThoai = nv.DienThoai,
                                 HinhAnh = nv.HinhAnh,
                                 DiaChi = nv.DiaChi,
+                                MaTrinhDo = nv.MaTrinhDo,
+                                TenTrinhDo = nv.TRINHDO.TenTrinhDo,
                                 MaBP = nv.MaBP,
                                 MaChucVu = nv.MaChucVu,
                                 TenBP = nv.BOPHAN.TenBP,
@@ -35,7 +38,7 @@ namespace DAL.DAL
                             };
                 return query.ToList();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e);
                 return null;
@@ -43,28 +46,54 @@ namespace DAL.DAL
 
         }
 
+        public static List<NhanVienDTO> LoadNhanVienDaThoiViec()
+        {
+            QuanLyNhanSuEntities db = DataProvider.dbContext;
+            var query = from nv in db.NHANVIENs
+                        where nv.DaThoiViec == true
+                        select new NhanVienDTO
+                        {
+                            MaNV = nv.MaNV,
+                            HoLot = nv.HoLot,
+                            Ten = nv.Ten,
+                            CMND = nv.CMND,
+                            GioiTinh = nv.GioiTinh,
+                            NgaySinh = nv.NgaySinh,
+                            DienThoai = nv.DienThoai,
+                            HinhAnh = nv.HinhAnh,
+                            DiaChi = nv.DiaChi,
+                            MaBP = nv.MaBP,
+                            MaChucVu = nv.MaChucVu,
+                            TenBP = nv.BOPHAN.TenBP,
+                            TenChucVu = nv.CHUCVU.TenChucVu,
+                            DaThoiViec = nv.DaThoiViec
+                        };
+            return query.ToList();
+        }
+
         public static NhanVienDTO CapNhat(NhanVienDTO nv)
         {
             try
             {
                 QuanLyNhanSuEntities db = DataProvider.dbContext;
-                NHANVIEN nvUpdated = db.NHANVIENs.SingleOrDefault(i => i.MaNV == nv.MaNV);
-                if (nvUpdated != null)
+                NHANVIEN NhanVienCanCapNhat = db.NHANVIENs.SingleOrDefault(i => i.MaNV == nv.MaNV);
+                if (NhanVienCanCapNhat != null)
                 {
-                    nvUpdated.HoLot = nv.HoLot;
-                    nvUpdated.Ten = nv.Ten;
-                    nvUpdated.CMND = nv.CMND;
-                    nvUpdated.GioiTinh = nv.GioiTinh;
-                    nvUpdated.NgaySinh = nv.NgaySinh;
-                    nvUpdated.DienThoai = nv.DienThoai;
-                    nvUpdated.HinhAnh = nv.HinhAnh;
-                    nvUpdated.DiaChi = nv.DiaChi;
-                    nvUpdated.MaBP = nv.MaBP;
-                    nvUpdated.MaChucVu = nv.MaChucVu;
-                    nvUpdated.DaThoiViec = nv.DaThoiViec;
+                    NhanVienCanCapNhat.HoLot = nv.HoLot;
+                    NhanVienCanCapNhat.Ten = nv.Ten;
+                    NhanVienCanCapNhat.CMND = nv.CMND;
+                    NhanVienCanCapNhat.GioiTinh = nv.GioiTinh;
+                    NhanVienCanCapNhat.NgaySinh = nv.NgaySinh;
+                    NhanVienCanCapNhat.DienThoai = nv.DienThoai;
+                    NhanVienCanCapNhat.HinhAnh = nv.HinhAnh;
+                    NhanVienCanCapNhat.DiaChi = nv.DiaChi;
+                    NhanVienCanCapNhat.MaBP = nv.MaBP;
+                    NhanVienCanCapNhat.MaChucVu = nv.MaChucVu;
+                    NhanVienCanCapNhat.MaTrinhDo = nv.MaTrinhDo;
+                    NhanVienCanCapNhat.DaThoiViec = nv.DaThoiViec;
                     db.SaveChanges();
                 }
-                return MyConvert.Convert_NhanVien_To_NhanVienDTO(nvUpdated);
+                return MyConvert.Convert_NhanVien_To_NhanVienDTO(NhanVienCanCapNhat);
             }
             catch
             {
@@ -85,7 +114,7 @@ namespace DAL.DAL
         {
             QuanLyNhanSuEntities db = DataProvider.dbContext;
             List<NHANVIEN> lstNhanVienInserted = db.NHANVIENs.AddRange(lstNhanVien).ToList();
-            if(lstNhanVien.Count == lstNhanVienInserted.Count)
+            if (lstNhanVien.Count == lstNhanVienInserted.Count)
             {
                 db.SaveChanges();
                 return true;
@@ -99,7 +128,7 @@ namespace DAL.DAL
             NHANVIEN nv = db.NHANVIENs.SingleOrDefault(i => i.MaNV == maNhanVien);
             nv = db.NHANVIENs.Remove(nv);
             db.SaveChanges();
-            if(nv != null)
+            if (nv != null)
             {
                 return true;
             }

@@ -13,6 +13,11 @@ namespace BUL
             return NhanVienDAL.LoadNhanVien();
         }
 
+        public static List<NhanVienDTO> LoadNhanVienDaThoiViec()
+        {
+            return NhanVienDAL.LoadNhanVienDaThoiViec();
+        }
+
         public static NhanVienDTO CapNhat(NhanVienDTO nv)
         {
             return NhanVienDAL.CapNhat(nv);

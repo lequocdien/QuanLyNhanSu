@@ -17,12 +17,17 @@ namespace EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public TRINHDO()
         {
+            this.NHANVIENs = new HashSet<NHANVIEN>();
             this.NHANVIEN_TRINHDO = new HashSet<NHANVIEN_TRINHDO>();
         }
     
         public int MaTrinhDo { get; set; }
         public string TenTrinhDo { get; set; }
+        public Nullable<int> MaLoaiCong { get; set; }
     
+        public virtual LOAICONG LOAICONG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN_TRINHDO> NHANVIEN_TRINHDO { get; set; }
     }

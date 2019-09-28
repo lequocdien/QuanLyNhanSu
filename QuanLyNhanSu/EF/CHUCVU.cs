@@ -22,7 +22,9 @@ namespace EF
     
         public int MaChucVu { get; set; }
         public string TenChucVu { get; set; }
+        public Nullable<int> MaPhuCap { get; set; }
     
+        public virtual PHUCAP PHUCAP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
     }

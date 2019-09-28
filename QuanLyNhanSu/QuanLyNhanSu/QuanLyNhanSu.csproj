@@ -33,16 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Export, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraEditors.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1.UI, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v19.1.Core, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.1, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.1.Extensions, Version=19.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -85,70 +94,136 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCao\frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCao\frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCao\xrpBangLuong.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCao\xrpBangLuong.Designer.cs">
+      <DependentUpon>xrpBangLuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChamCong\ucChamCong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChamCong\ucChamCong.Designer.cs">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChucVu\ucChucVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ChucVu\ucChucVu.Designer.cs">
+      <DependentUpon>ucChucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="BoPhan\ucBoPhan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BoPhan\ucBoPhan.Designer.cs">
+      <DependentUpon>ucBoPhan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhuCap\ucPhucCap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhuCap\ucPhucCap.Designer.cs">
+      <DependentUpon>ucPhucCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucHeThong\ucDangNhap.cs">
+    <Compile Include="DangNhap\ucDangNhap.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHeThong\ucDangNhap.Designer.cs">
+    <Compile Include="DangNhap\ucDangNhap.Designer.cs">
       <DependentUpon>ucDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucHeThong\ucManHinhChinh.cs">
+    <Compile Include="Menu\ucMenuChinh.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHeThong\ucManHinhChinh.Designer.cs">
-      <DependentUpon>ucManHinhChinh.cs</DependentUpon>
+    <Compile Include="Menu\ucMenuChinh.Designer.cs">
+      <DependentUpon>ucMenuChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucHeThong\ucProgressBar.cs">
+    <Compile Include="NhanVien\ucProgressBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucHeThong\ucProgressBar.Designer.cs">
+    <Compile Include="NhanVien\ucProgressBar.Designer.cs">
       <DependentUpon>ucProgressBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\frmThongTinBaoHiem.cs">
+    <Compile Include="NhanVien\frmThongTinBaoHiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\frmThongTinBaoHiem.Designer.cs">
+    <Compile Include="NhanVien\frmThongTinBaoHiem.Designer.cs">
       <DependentUpon>frmThongTinBaoHiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\ucDSNhanVienThoiViec.cs">
+    <Compile Include="NhanVien\ucDSNhanVienThoiViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\ucDSNhanVienThoiViec.Designer.cs">
+    <Compile Include="NhanVien\ucDSNhanVienThoiViec.Designer.cs">
       <DependentUpon>ucDSNhanVienThoiViec.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\ucHopDongNhanVien.cs">
+    <Compile Include="NhanVien\ucHopDongNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\ucHopDongNhanVien.Designer.cs">
+    <Compile Include="NhanVien\ucHopDongNhanVien.Designer.cs">
       <DependentUpon>ucHopDongNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\ucHoSoNhanVien.cs">
+    <Compile Include="NhanVien\ucHoSoNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\ucHoSoNhanVien.Designer.cs">
+    <Compile Include="NhanVien\ucHoSoNhanVien.Designer.cs">
       <DependentUpon>ucHoSoNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\ucNhapXuatNV.cs">
+    <Compile Include="NhanVien\ucNhapXuatNV.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\ucNhapXuatNV.Designer.cs">
+    <Compile Include="NhanVien\ucNhapXuatNV.Designer.cs">
       <DependentUpon>ucNhapXuatNV.cs</DependentUpon>
     </Compile>
-    <Compile Include="ucNhanVien\_Layout.cs">
+    <Compile Include="NhanVien\LayoutNhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucNhanVien\_Layout.Designer.cs">
-      <DependentUpon>_Layout.cs</DependentUpon>
+    <Compile Include="NhanVien\LayoutNhanVien.Designer.cs">
+      <DependentUpon>LayoutNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Thuong\ucThuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Thuong\ucThuong.Designer.cs">
+      <DependentUpon>ucThuong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TinhLuong\ucTinhLuong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TinhLuong\ucTinhLuong.Designer.cs">
+      <DependentUpon>ucTinhLuong.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BaoCao\frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCao\xrpBangLuong.resx">
+      <DependentUpon>xrpBangLuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChamCong\ucChamCong.resx">
+      <DependentUpon>ucChamCong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChucVu\ucChucVu.resx">
+      <DependentUpon>ucChucVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BoPhan\ucBoPhan.resx">
+      <DependentUpon>ucBoPhan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhuCap\ucPhucCap.resx">
+      <DependentUpon>ucPhucCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -161,32 +236,38 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ucHeThong\ucDangNhap.resx">
+    <EmbeddedResource Include="DangNhap\ucDangNhap.resx">
       <DependentUpon>ucDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHeThong\ucManHinhChinh.resx">
-      <DependentUpon>ucManHinhChinh.cs</DependentUpon>
+    <EmbeddedResource Include="Menu\ucMenuChinh.resx">
+      <DependentUpon>ucMenuChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucHeThong\ucProgressBar.resx">
+    <EmbeddedResource Include="NhanVien\ucProgressBar.resx">
       <DependentUpon>ucProgressBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\frmThongTinBaoHiem.resx">
+    <EmbeddedResource Include="NhanVien\frmThongTinBaoHiem.resx">
       <DependentUpon>frmThongTinBaoHiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\ucDSNhanVienThoiViec.resx">
+    <EmbeddedResource Include="NhanVien\ucDSNhanVienThoiViec.resx">
       <DependentUpon>ucDSNhanVienThoiViec.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\ucHopDongNhanVien.resx">
+    <EmbeddedResource Include="NhanVien\ucHopDongNhanVien.resx">
       <DependentUpon>ucHopDongNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\ucHoSoNhanVien.resx">
+    <EmbeddedResource Include="NhanVien\ucHoSoNhanVien.resx">
       <DependentUpon>ucHoSoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\ucNhapXuatNV.resx">
+    <EmbeddedResource Include="NhanVien\ucNhapXuatNV.resx">
       <DependentUpon>ucNhapXuatNV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucNhanVien\_Layout.resx">
-      <DependentUpon>_Layout.cs</DependentUpon>
+    <EmbeddedResource Include="NhanVien\LayoutNhanVien.resx">
+      <DependentUpon>LayoutNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Thuong\ucThuong.resx">
+      <DependentUpon>ucThuong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TinhLuong\ucTinhLuong.resx">
+      <DependentUpon>ucTinhLuong.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -269,7 +350,7 @@
     <None Include="Resources\imgHopDongNV_50x50_.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Report\" />
+    <Folder Include="HeThong\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

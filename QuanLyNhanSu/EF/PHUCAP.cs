@@ -17,7 +17,7 @@ namespace EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public PHUCAP()
         {
-            this.NHANVIEN_PHUCAP = new HashSet<NHANVIEN_PHUCAP>();
+            this.CHUCVUs = new HashSet<CHUCVU>();
         }
     
         public int MaPhuCap { get; set; }
@@ -25,6 +25,6 @@ namespace EF
         public Nullable<decimal> Tien { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
+        public virtual ICollection<CHUCVU> CHUCVUs { get; set; }
     }
 }

@@ -17,7 +17,7 @@ namespace EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOAICONG()
         {
-            this.BANGCHAMCONGs = new HashSet<BANGCHAMCONG>();
+            this.TRINHDOes = new HashSet<TRINHDO>();
         }
     
         public int MaLoaiCong { get; set; }
@@ -26,6 +26,6 @@ namespace EF
         public string GhiChu { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
+        public virtual ICollection<TRINHDO> TRINHDOes { get; set; }
     }
 }

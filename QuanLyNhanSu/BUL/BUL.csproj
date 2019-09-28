@@ -43,10 +43,12 @@
   <ItemGroup>
     <Compile Include="BaoHiemBUL.cs" />
     <Compile Include="BoPhanBUL.cs" />
+    <Compile Include="ChamCongBUL.cs" />
     <Compile Include="ChucVuBUL.cs" />
     <Compile Include="NhanVienBUL.cs" />
-    <Compile Include="NhanVien_TrinhDoBUL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TinhLuongBUL.cs" />
+    <Compile Include="TrangThaiChamCongBUL.cs" />
     <Compile Include="TrinhDoBUL.cs" />
   </ItemGroup>
   <ItemGroup>

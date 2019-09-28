@@ -12,6 +12,8 @@ namespace EF
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class QuanLyNhanSuEntities : DbContext
     {
@@ -25,23 +27,85 @@ namespace EF
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
         public virtual DbSet<BAOHIEM> BAOHIEMs { get; set; }
         public virtual DbSet<BOPHAN> BOPHANs { get; set; }
+        public virtual DbSet<CHAMCONG> CHAMCONGs { get; set; }
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
-        public virtual DbSet<KHAUTRU> KHAUTRUs { get; set; }
-        public virtual DbSet<LOAICA> LOAICAs { get; set; }
         public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
         public virtual DbSet<LOAIHOPDONG> LOAIHOPDONGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<NHANVIEN_KHAUTRU> NHANVIEN_KHAUTRU { get; set; }
-        public virtual DbSet<NHANVIEN_NGHIPHEP> NHANVIEN_NGHIPHEP { get; set; }
-        public virtual DbSet<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
         public virtual DbSet<NHANVIEN_TRINHDO> NHANVIEN_TRINHDO { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
-        public virtual DbSet<QLUNGLUONG> QLUNGLUONGs { get; set; }
-        public virtual DbSet<TANGCA> TANGCAs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<THUONG> THUONGs { get; set; }
+        public virtual DbSet<TRANGTHAICHAMCONG> TRANGTHAICHAMCONGs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
+    
+        public virtual ObjectResult<sp_ChamCongNhanVien_Result> sp_ChamCongNhanVien(Nullable<int> ngay, Nullable<int> thang, Nullable<int> name)
+        {
+            var ngayParameter = ngay.HasValue ?
+                new ObjectParameter("ngay", ngay) :
+                new ObjectParameter("ngay", typeof(int));
+    
+            var thangParameter = thang.HasValue ?
+                new ObjectParameter("thang", thang) :
+                new ObjectParameter("thang", typeof(int));
+    
+            var nameParameter = name.HasValue ?
+                new ObjectParameter("name", name) :
+                new ObjectParameter("name", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ChamCongNhanVien_Result>("sp_ChamCongNhanVien", ngayParameter, thangParameter, nameParameter);
+        }
+    
+        public virtual int sp_SoLuongNhanVienTungBoPhan()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_SoLuongNhanVienTungBoPhan");
+        }
+    
+        public virtual int sp_SoLuongNhanVienTungChucVu()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_SoLuongNhanVienTungChucVu");
+        }
+    
+        public virtual ObjectResult<sp_ThuongCacNgayLe_Result> sp_ThuongCacNgayLe()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_ThuongCacNgayLe_Result>("sp_ThuongCacNgayLe");
+        }
+    
+        public virtual int sp_TinhLuongMotNhanVien(Nullable<int> manv, Nullable<int> thang, Nullable<int> luongcoban)
+        {
+            var manvParameter = manv.HasValue ?
+                new ObjectParameter("manv", manv) :
+                new ObjectParameter("manv", typeof(int));
+    
+            var thangParameter = thang.HasValue ?
+                new ObjectParameter("thang", thang) :
+                new ObjectParameter("thang", typeof(int));
+    
+            var luongcobanParameter = luongcoban.HasValue ?
+                new ObjectParameter("luongcoban", luongcoban) :
+                new ObjectParameter("luongcoban", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_TinhLuongMotNhanVien", manvParameter, thangParameter, luongcobanParameter);
+        }
+    
+        public virtual ObjectResult<sp_TinhLuongTatCaNhanVien_Result> sp_TinhLuongTatCaNhanVien(Nullable<int> thang, Nullable<int> luongCoBan, Nullable<int> luongTangCa)
+        {
+            var thangParameter = thang.HasValue ?
+                new ObjectParameter("thang", thang) :
+                new ObjectParameter("thang", typeof(int));
+    
+            var luongCoBanParameter = luongCoBan.HasValue ?
+                new ObjectParameter("luongCoBan", luongCoBan) :
+                new ObjectParameter("luongCoBan", typeof(int));
+    
+            var luongTangCaParameter = luongTangCa.HasValue ?
+                new ObjectParameter("luongTangCa", luongTangCa) :
+                new ObjectParameter("luongTangCa", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_TinhLuongTatCaNhanVien_Result>("sp_TinhLuongTatCaNhanVien", thangParameter, luongCoBanParameter, luongTangCaParameter);
+        }
     }
 }

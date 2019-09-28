@@ -17,15 +17,9 @@ namespace EF
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
-            this.BANGCHAMCONGs = new HashSet<BANGCHAMCONG>();
             this.BAOHIEMs = new HashSet<BAOHIEM>();
+            this.CHAMCONGs = new HashSet<CHAMCONG>();
             this.HOPDONGs = new HashSet<HOPDONG>();
-            this.NHANVIEN_KHAUTRU = new HashSet<NHANVIEN_KHAUTRU>();
-            this.NHANVIEN_NGHIPHEP = new HashSet<NHANVIEN_NGHIPHEP>();
-            this.NHANVIEN_PHUCAP = new HashSet<NHANVIEN_PHUCAP>();
-            this.NHANVIEN_TRINHDO = new HashSet<NHANVIEN_TRINHDO>();
-            this.QLUNGLUONGs = new HashSet<QLUNGLUONG>();
-            this.TANGCAs = new HashSet<TANGCA>();
         }
     
         public int MaNV { get; set; }
@@ -38,29 +32,18 @@ namespace EF
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
         public bool DaThoiViec { get; set; }
-        public string BangCap { get; set; }
         public Nullable<int> MaBP { get; set; }
         public Nullable<int> MaChucVu { get; set; }
+        public Nullable<int> MaTrinhDo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BANGCHAMCONG> BANGCHAMCONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BAOHIEM> BAOHIEMs { get; set; }
         public virtual BOPHAN BOPHAN { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHAMCONG> CHAMCONGs { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN_KHAUTRU> NHANVIEN_KHAUTRU { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN_NGHIPHEP> NHANVIEN_NGHIPHEP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN_PHUCAP> NHANVIEN_PHUCAP { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN_TRINHDO> NHANVIEN_TRINHDO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<QLUNGLUONG> QLUNGLUONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TANGCA> TANGCAs { get; set; }
+        public virtual TRINHDO TRINHDO { get; set; }
     }
 }

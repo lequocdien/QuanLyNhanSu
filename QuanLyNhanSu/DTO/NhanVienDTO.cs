@@ -17,11 +17,12 @@ namespace DTO
         public byte[] HinhAnh { get; set; }
         public string DiaChi { get; set; }
         public string DienThoai { get; set; }
-        public string BangCap { get; set; }
+        public Nullable<int> MaTrinhDo { get; set; }
         public Nullable<int> MaBP { get; set; }
         public Nullable<int> MaChucVu { get; set; }
         public string TenBP { get; set; }
         public string TenChucVu { get; set; }
+        public string TenTrinhDo { get; set; }
         public bool DaThoiViec { get; set; }
     }
 }

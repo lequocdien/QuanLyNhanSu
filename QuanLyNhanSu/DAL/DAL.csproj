@@ -47,10 +47,12 @@
   <ItemGroup>
     <Compile Include="DAL\BaoHiemDAL.cs" />
     <Compile Include="DAL\BoPhanDAL.cs" />
+    <Compile Include="DAL\ChamCongDAL.cs" />
     <Compile Include="DAL\ChucVuDAL.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\NhanVienDAL.cs" />
-    <Compile Include="DAL\NhanVien_TrinhDoDAL.cs" />
+    <Compile Include="DAL\TinhLuongDAL.cs" />
+    <Compile Include="DAL\TrangThaiChamCongDAL.cs" />
     <Compile Include="DAL\TrinhDoDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

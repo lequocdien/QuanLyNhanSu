@@ -63,7 +63,7 @@
 
         #endregion
 
-        private MetroFramework.Controls.MetroPanel mpnContainer;
+        public MetroFramework.Controls.MetroPanel mpnContainer;
     }
 }
 

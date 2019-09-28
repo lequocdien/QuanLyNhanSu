@@ -17,12 +17,8 @@ namespace EF
         public int MaNV_TD { get; set; }
         public int MaTrinhDo { get; set; }
         public int MaNV { get; set; }
-        public Nullable<decimal> PhuCap { get; set; }
-        public Nullable<System.DateTime> NgayCap { get; set; }
-        public string ChuyenMon { get; set; }
         public string DonViCap { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
     }
 }
