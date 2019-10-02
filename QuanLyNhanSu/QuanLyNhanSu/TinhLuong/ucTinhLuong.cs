@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using BUL;
+using DevExpress.XtraReports.UI;
 using DTO;
 using EF;
 using QuanLyNhanSu.BaoCao;
@@ -45,8 +46,13 @@ namespace QuanLyNhanSu.TinhLuong
 
         private void BtnXuatBaoCao_Click(object sender, EventArgs e)
         {
-            frmReport frm = new frmReport();
-            frm.Show();
+            xrpBangLuong rpt = new xrpBangLuong();
+            rpt.lblThang.Text = dateTimePicker1.Value.Month.ToString();
+            rpt.lblNam.Text = dateTimePicker1.Value.Year.ToString();
+            rpt.DataSource = TinhLuongBUL.TinhLuongTatCaNhanVien(dateTimePicker1.Value.Month, dateTimePicker1.Value.Year, double.Parse(txtLuongCoBan.Text), double.Parse(txtLuongTangCa.Text));
+            rpt.BindData();
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
 
         #region TOOLS

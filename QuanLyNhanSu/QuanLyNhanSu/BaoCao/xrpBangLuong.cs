@@ -13,5 +13,15 @@ namespace QuanLyNhanSu.BaoCao
             InitializeComponent();
         }
 
+        public void BindData()
+        {
+            colHo.DataBindings.Add("Text", DataSource, "HoLot");
+            colTen.DataBindings.Add("Text", DataSource, "Ten");
+            colLoaiCong.DataBindings.Add("Text", DataSource, "TenLoaiCong");
+            colHeSoLuong.DataBindings.Add("Text", DataSource, "HeSo");
+            colSoNgayLam.DataBindings.Add("Text", DataSource, "SoNgayLam");
+            colSoGioTangCa.DataBindings.Add("Text", DataSource, "SoGioLam");
+            colLuong.DataBindings.Add("Text", DataSource, "Luong");
+        }
     }
 }

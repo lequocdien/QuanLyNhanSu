@@ -56,7 +56,6 @@ namespace QuanLyNhanSu.NhanVien
             cbxTrinhDo.DataSource = lstTrinhDo;
             cbxTrinhDo.DisplayMember = "TenTrinhDo";
             cbxTrinhDo.ValueMember = "MaTrinhDo";
-
         }
 
         private void dgvNhanVien_Click(object sender, EventArgs e)

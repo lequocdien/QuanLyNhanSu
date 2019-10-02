@@ -94,12 +94,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaoCao\frmReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BaoCao\frmReport.Designer.cs">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="BaoCao\xrpBangLuong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -204,9 +198,6 @@
     <Compile Include="TinhLuong\ucTinhLuong.Designer.cs">
       <DependentUpon>ucTinhLuong.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BaoCao\frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="BaoCao\xrpBangLuong.resx">
       <DependentUpon>xrpBangLuong.cs</DependentUpon>
     </EmbeddedResource>
